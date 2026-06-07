@@ -21,7 +21,7 @@ export default function Messages() {
     // Socket Initialization
     useEffect(() => {
         if (user && user._id) {
-            const newSocket = io(import.meta.env.VITE_API_URL || 'http://localhost:5000');
+            const newSocket = io(import.meta.env.VITE_API_URL || 'https://stugig-backend.onrender.com');
             setSocket(newSocket);
 
             newSocket.on('connect', () => {

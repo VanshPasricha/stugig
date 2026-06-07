@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 // Create an Axios instance
-const api = axios.create();
+const api = axios.create({
+    baseURL: import.meta.env.VITE_API_URL || 'https://stugig-backend.onrender.com',
+});
 
 // Add a request interceptor
 api.interceptors.request.use(

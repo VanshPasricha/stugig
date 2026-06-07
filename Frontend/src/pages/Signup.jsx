@@ -15,6 +15,8 @@ export default function Signup() {
     const { register } = useAuth();
     const navigate = useNavigate();
 
+    const API_URL = import.meta.env.VITE_API_URL || 'https://stugig-backend.onrender.com';
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
@@ -53,7 +55,7 @@ export default function Signup() {
                     <div className="mt-8">
                         <div className="grid grid-cols-2 gap-3 mb-6">
                             <a 
-                                href="http://localhost:5000/api/auth/google"
+                                href={`${API_URL}/api/auth/google`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex justify-center items-center py-2.5 px-4 border border-border rounded-lg shadow-sm bg-card hover:bg-muted/50 transition-colors font-medium text-sm text-foreground"
@@ -67,7 +69,7 @@ export default function Signup() {
                                 Google
                             </a>
                             <a 
-                                href="http://localhost:5000/api/auth/github"
+                                href={`${API_URL}/api/auth/github`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex justify-center items-center py-2.5 px-4 border border-border rounded-lg shadow-sm bg-card hover:bg-muted/50 transition-colors font-medium text-sm text-foreground"
